@@ -1,0 +1,104 @@
+{
+  "name": "Audio Signal Processing Agent",
+  "intents": [
+    {
+      "intent": "reduce_noise",
+      "examples": [
+        {
+          "text": "How can I reduce noise in my amplifier?"
+        },
+        {
+          "text": "My circuit has a humming sound"
+        },
+        {
+          "text": "Noise elimination techniques?"
+        }
+      ]
+    },
+    {
+      "intent": "design_filter",
+      "examples": [
+        {
+          "text": "How to design a low-pass filter?"
+        },
+        {
+          "text": "Filter design for 1kHz cutoff"
+        },
+        {
+          "text": "Suggest a filter circuit"
+        }
+      ]
+    },
+    {
+      "intent": "reduce_distortion",
+      "examples": [
+        {
+          "text": "How to reduce distortion in op-amp?"
+        },
+        {
+          "text": "My audio signal is distorted"
+        },
+        {
+          "text": "Reduce THD in circuit"
+        }
+      ]
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Noise Reduction Advice",
+      "conditions": "#reduce_noise",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Check grounding and use decoupling capacitors to reduce noise."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Filter Design Advice",
+      "conditions": "#design_filter",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Use RC formula f = 1/(2\u03c0RC) for designing a low-pass filter."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Distortion Reduction Advice",
+      "conditions": "#reduce_distortion",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Use high slew rate op-amps and minimize signal overload to reduce distortion."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      }
+    }
+  ],
+  "language": "en"
+}
