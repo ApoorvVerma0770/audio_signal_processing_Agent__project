@@ -1,0 +1,14 @@
+[
+  {
+    "keyword": "noise",
+    "response": "To reduce noise in your audio amplifier, check grounding and use decoupling capacitors."
+  },
+  {
+    "keyword": "low-pass filter",
+    "response": "A simple RC low-pass filter can be designed using the formula f = 1/(2πRC)."
+  },
+  {
+    "keyword": "distortion",
+    "response": "Distortion can be minimized by choosing an op-amp with a high slew rate and low THD."
+  }
+]
